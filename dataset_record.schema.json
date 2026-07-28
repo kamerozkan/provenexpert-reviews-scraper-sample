@@ -1,0 +1,261 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/kamerozkan/provenexpert-reviews-scraper-sample/dataset_record.schema.json",
+  "title": "ProvenExpert Reviews Scraper dataset record",
+  "description": "Consumer schema for the Actor's business, profile, review, change, and error rows.",
+  "oneOf": [
+    {
+      "$ref": "#/definitions/business"
+    },
+    {
+      "$ref": "#/definitions/profile"
+    },
+    {
+      "$ref": "#/definitions/review"
+    },
+    {
+      "$ref": "#/definitions/change"
+    },
+    {
+      "$ref": "#/definitions/error"
+    }
+  ],
+  "definitions": {
+    "nullableString": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "nullableNumber": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "business": {
+      "type": "object",
+      "required": [
+        "type",
+        "entityKey",
+        "companyName",
+        "sourceCount",
+        "platforms",
+        "trustScore",
+        "scrapedAt",
+        "snapshotStatus"
+      ],
+      "properties": {
+        "type": {
+          "const": "business"
+        },
+        "entityKey": {
+          "type": "string"
+        },
+        "companyName": {
+          "$ref": "#/definitions/nullableString"
+        },
+        "sourceCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "platforms": {
+          "type": "object"
+        },
+        "trustScore": {
+          "$ref": "#/definitions/nullableNumber"
+        },
+        "matchConfidence": {
+          "$ref": "#/definitions/nullableNumber"
+        },
+        "benchmark": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "scrapedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "snapshotStatus": {
+          "enum": [
+            "complete",
+            "incomplete"
+          ]
+        },
+        "failedPlatforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "profile": {
+      "type": "object",
+      "required": [
+        "type",
+        "platform",
+        "profileUrl",
+        "companyName",
+        "overallRating",
+        "scrapedAt"
+      ],
+      "properties": {
+        "type": {
+          "const": "profile"
+        },
+        "platform": {
+          "enum": [
+            "provenexpert",
+            "trustedshops",
+            "ekomi",
+            "google_maps"
+          ]
+        },
+        "profileUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "companyName": {
+          "$ref": "#/definitions/nullableString"
+        },
+        "overallRating": {
+          "$ref": "#/definitions/nullableNumber"
+        },
+        "ratingReviewCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "lifetimeReviewCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "verifiedReviewCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "verificationPolicy": {
+          "$ref": "#/definitions/nullableString"
+        },
+        "dataOrigin": {
+          "$ref": "#/definitions/nullableString"
+        },
+        "scrapedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": true
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "type",
+        "platform",
+        "profileUrl",
+        "reviewId",
+        "scrapedAt"
+      ],
+      "properties": {
+        "type": {
+          "const": "review"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "profileUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "reviewId": {
+          "$ref": "#/definitions/nullableString"
+        },
+        "reviewRating": {
+          "$ref": "#/definitions/nullableNumber"
+        },
+        "isVerified": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "scrapedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": true
+    },
+    "change": {
+      "type": "object",
+      "required": [
+        "type",
+        "entityKey",
+        "changeStatus",
+        "scrapedAt"
+      ],
+      "properties": {
+        "type": {
+          "const": "change"
+        },
+        "entityKey": {
+          "type": "string"
+        },
+        "changeStatus": {
+          "type": "string"
+        },
+        "trustScoreDelta": {
+          "$ref": "#/definitions/nullableNumber"
+        },
+        "totalReviewCountDelta": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "scrapedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": true
+    },
+    "error": {
+      "type": "object",
+      "required": [
+        "type",
+        "errorCode",
+        "errorMessage",
+        "scrapedAt"
+      ],
+      "properties": {
+        "type": {
+          "const": "error"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "scrapedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

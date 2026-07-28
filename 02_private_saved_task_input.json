@@ -1,0 +1,36 @@
+{
+  "changesOnly": false,
+  "discoverExternalProfilesFromWebsite": false,
+  "emitChanges": false,
+  "followExternalProfiles": false,
+  "includeBusinessSummary": true,
+  "maxConcurrency": 4,
+  "maxReviewsPerProfile": 50,
+  "minimumBenchmarkCohortSize": 3,
+  "outputMode": "profile_and_reviews",
+  "proxyConfiguration": {
+    "useApifyProxy": false
+  },
+  "saveHistory": false,
+  "startUrls": [
+    {
+      "url": "https://www.provenexpert.com/de-de/sp-unternehmerforum-gmbh/"
+    },
+    {
+      "url": "https://www.trustedshops.de/bewertung/info_X898CBF73DF72E74E9BA8F9207D295CAE.html"
+    },
+    {
+      "url": "https://www.ekomi.de/bewertungen-nomi.shop.html"
+    },
+    {
+      "url": "https://www.google.de/maps/place/S%26P+Unternehmerforum+GmbH/@48.1779695,11.6324289,17z/data=!3m1!4b1!4m5!3m4!1s0x479e0a91689ec4ab:0xa26b4a463aacc8e!8m2!3d48.1779695!4d11.6346176?hl=de"
+    }
+  ],
+  "profileSlugs": [],
+  "businesses": [],
+  "searchQueries": [],
+  "locale": "de-de",
+  "sortBy": "newest",
+  "historyDatasetName": "dach-reputation-history",
+  "ratingChangeThreshold": 0.01
+}

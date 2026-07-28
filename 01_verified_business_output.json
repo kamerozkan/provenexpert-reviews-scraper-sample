@@ -1,0 +1,65 @@
+{
+  "type": "business",
+  "entityKey": "business_42817d844716bd9311e7",
+  "companyName": "WENKO Online Shop",
+  "category": null,
+  "city": "Hilden",
+  "website": "https://shop.wenko.de",
+  "websiteDomain": "shop.wenko.de",
+  "sourceCount": 1,
+  "platforms": {
+    "trustedshops": {
+      "profileId": "X898CBF73DF72E74E9BA8F9207D295CAE",
+      "profileUrl": "https://www.trustedshops.de/bewertung/info_X898CBF73DF72E74E9BA8F9207D295CAE.html",
+      "companyName": "WENKO Online Shop",
+      "rating": 4.69,
+      "reviewCount": 4417,
+      "lifetimeReviewCount": 29116,
+      "verifiedReviewCount": null,
+      "recommendationRate": null,
+      "latestReviewDate": "2026-07-25",
+      "verificationPolicy": "platform_transaction_verified",
+      "isCertified": true,
+      "dataOrigin": "direct_profile"
+    }
+  },
+  "crossChannel": {
+    "averageRating": 4.69,
+    "ratingRange": 0,
+    "totalRatingReviewCount": 4417,
+    "totalLifetimeReviewCount": 29116
+  },
+  "trustScore": 87.2,
+  "trustScoreVersion": "dach-trust-v1",
+  "trustScoreComponents": {
+    "ratingQuality": 92.3,
+    "reviewVolume": 91.1,
+    "channelCoverage": 33.3,
+    "reviewFreshness": 99.5,
+    "verifiedSourceShare": 100
+  },
+  "matchConfidence": 1,
+  "matchSignals": [
+    "single_profile"
+  ],
+  "profileUrls": [
+    "https://www.trustedshops.de/bewertung/info_X898CBF73DF72E74E9BA8F9207D295CAE.html"
+  ],
+  "reviewIds": {
+    "trustedshops": []
+  },
+  "scrapedAt": "2026-07-28T12:27:59.281Z",
+  "snapshotStatus": "complete",
+  "failedPlatforms": [],
+  "failedSources": [],
+  "benchmark": {
+    "status": "ready",
+    "basis": "all_supplied_businesses",
+    "category": null,
+    "cohortSize": 3,
+    "minimumCohortSize": 3,
+    "trustScorePercentile": 83,
+    "ratingPercentile": 50,
+    "reviewVolumePercentile": 83
+  }
+}

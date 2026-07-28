@@ -1,0 +1,67 @@
+{
+  "type": "profile",
+  "platform": "provenexpert",
+  "profileId": "1pQZ482Am9TplqGB1xwZkqwA5HGZ3R3p",
+  "slug": "sp-unternehmerforum-gmbh",
+  "profileUrl": "https://www.provenexpert.com/de-de/sp-unternehmerforum-gmbh/",
+  "companyName": "S&P Unternehmerforum GmbH",
+  "category": "Seminare + Lehrgänge mit Zertifizierung",
+  "overallRating": 4.64,
+  "overallRatingLabel": "Sehr Gut",
+  "publishedReviewCount": 809,
+  "ratingReviewCount": 776,
+  "totalReviewCount": 809,
+  "lifetimeReviewCount": 809,
+  "verifiedReviewCount": null,
+  "publishedReviewRatio": 1,
+  "nativeRating": 4.63,
+  "nativeReviewCount": 776,
+  "externalReviewCount": 33,
+  "externalSourceCount": 4,
+  "recommendationRate": 99,
+  "externalSources": [
+    {
+      "sourceName": "Facebook",
+      "sourceUrl": "https://www.facebook.com/Unternehmerforum/reviews/",
+      "rating": 5,
+      "reviewCount": 1,
+      "lastReviewDate": "2022-03-18"
+    },
+    {
+      "sourceName": "Webwiki",
+      "sourceUrl": "https://www.webwiki.de/sp-unternehmerforum.de",
+      "rating": 5,
+      "reviewCount": 2,
+      "lastReviewDate": "2019-10-06"
+    },
+    {
+      "sourceName": "Google Maps",
+      "sourceUrl": "https://www.google.de/maps/place/S%26P+Unternehmerforum+GmbH/@48.1779695,11.6324289,17z/data=!3m1!4b1!4m5!3m4!1s0x479e0a91689ec4ab:0xa26b4a463aacc8e!8m2!3d48.1779695!4d11.6346176",
+      "rating": 5,
+      "reviewCount": 5,
+      "lastReviewDate": "2025-07-19"
+    },
+    {
+      "sourceName": "semigator.de",
+      "sourceUrl": "https://www.semigator.de/anbieter/profil/1341643/SP-Unternehmerforum-GmbH",
+      "rating": 5,
+      "reviewCount": 25,
+      "lastReviewDate": "2025-10-15"
+    }
+  ],
+  "website": "https://sp-unternehmerforum.de/",
+  "websites": [
+    "https://sp-unternehmerforum.de/"
+  ],
+  "profileActiveSince": "2016-04-09",
+  "lastProfileUpdate": "2026-07-24",
+  "verificationPolicy": "source_declared",
+  "scrapedAt": "2026-07-28T12:27:50.335Z",
+  "sourceBusinessKey": null,
+  "sourceBusinessName": null,
+  "benchmarkCategory": null,
+  "discoveryLocation": null,
+  "followedFrom": null,
+  "collectedReviewIds": [],
+  "latestReviewDate": null
+}
