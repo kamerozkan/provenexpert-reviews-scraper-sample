@@ -1,0 +1,15 @@
+{
+  "id": "B2OJoBUTuvZKhistt",
+  "name": "provenexpert-reviews-scraper",
+  "title": "Trusted Shops & ProvenExpert Reviews Scraper - German Ratings",
+  "description": "Scrape public business ratings & reviews from ProvenExpert, Trusted Shops, eKomi & Google Maps for companies in Germany. Match the same company across all four channels, calculate a transparent trust score, track rating changes over time & benchmark each business against its sector cohort.",
+  "seoTitle": "ProvenExpert & Trusted Shops Reviews Scraper",
+  "seoDescription": "Collect German business reviews and rating signals from ProvenExpert, Trusted Shops, eKomi and Google Maps. Compare companies and track reputation changes.",
+  "isPublic": true,
+  "url": "https://apify.com/kamerozkan/provenexpert-reviews-scraper",
+  "checkedAt": "2026-09-30",
+  "changeScope": "listing metadata and sample documentation only",
+  "runtimeChanged": false,
+  "schemasChanged": false,
+  "examplesRegenerated": false
+}

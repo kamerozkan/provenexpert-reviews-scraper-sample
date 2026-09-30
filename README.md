@@ -1,6 +1,10 @@
 **Live Actor and maintained API: [Run ProvenExpert Reviews Scraper on Apify](https://apify.com/kamerozkan/provenexpert-reviews-scraper)**
 
-# DACH Business Review Intelligence API Samples
+# Trusted Shops & ProvenExpert Reviews Scraper - German Ratings: Samples
+
+Scrape public business ratings & reviews from ProvenExpert, Trusted Shops, eKomi & Google Maps for companies in Germany. Match the same company across all four channels, calculate a transparent trust score, track rating changes over time & benchmark each business against its sector cohort.
+
+[Run Trusted Shops & ProvenExpert Reviews Scraper - German Ratings on Apify](https://apify.com/kamerozkan/provenexpert-reviews-scraper)
 
 ![Actor](https://img.shields.io/badge/Apify_Actor-public-00a67e)
 ![Latest build](https://img.shields.io/badge/latest_build-0.3.8-2563eb)
