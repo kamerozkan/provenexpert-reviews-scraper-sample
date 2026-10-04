@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-04",
+  "evidenceType": "offline maintenance validation plus separate cloud publication verification",
+  "publicationStatus": "public latest build and source hashes verified separately from offline tests",
+  "sourceReachability": "not tested by these offline checks",
+  "customerEffect": "not measured",
+  "newActorRuns": 0,
+  "sourceFixturesAdded": false,
+  "existingExamplesRegenerated": false,
+  "inputSchemaChanged": false,
+  "pricingChanged": false,
+  "networkTransportChanged": false,
+  "actorId": "B2OJoBUTuvZKhistt",
+  "baselineBuild": {
+    "number": "0.3.10",
+    "id": "7wl0lk509oCe2sDa8"
+  },
+  "authorTests": {
+    "passed": 39,
+    "failed": 0,
+    "scope": "14 existing reputation/history tests plus 25 maintenance regressions and healthy controls"
+  },
+  "independentFinalCheckGroups": {
+    "passed": 6,
+    "failed": 0,
+    "scope": "two post-review identity repairs and focused healthy controls"
+  },
+  "repairs": [
+    "Distinct same-platform branches sharing a website receive separate automatic source-profile identities.",
+    "Different explicit business-group keys cannot merge directly or through an unkeyed bridge; the same group still combines known sources.",
+    "Legacy previousDatasetId/history baselines use source-profile evidence instead of aggregate entityKey alone; ambiguous/conflicting/invalid-clock baselines are incomplete.",
+    "An incomplete prior snapshot suppresses numeric deltas and false addition/recovery claims.",
+    "Known incomplete peers and their reconstructed raw profile rows are excluded from ready benchmark cohorts; duplicate old/new keys cannot inflate the same-profile cohort."
+  ],
+  "compatibilityLimits": [
+    "Automatic entityKey values migrate; explicit sourceBusinessKey hashes remain stable.",
+    "A preferred source/ID change can change an automatic key. Contradictory nonempty IDs/URLs conservatively withhold the comparison, including a URL rename with the same ID.",
+    "Unambiguous ID-less legacy rows can still match by profile URL.",
+    "Known partial records are excluded; a profile-only supplied benchmark retains its previous supplied-row behavior.",
+    "Existing history/benchmark read caps and source matching heuristics remain. Offline checks are not broad entity-resolution or source reliability proof."
+  ],
+  "candidateRuntimeSha256": {
+    "src/history.js": "98d623bd782a5bbffe7e92c7cba99ae102bef23de6a392a4130a943db1fc6dd7",
+    "src/main.js": "bbff9749850dfc441269342a2bec3393ebbb941e0f7260cfae23b79b21df7ecc",
+    "src/reputation.js": "bb6016d9d5acdf9f73d16f8eec1d02259c7a7df422d5baf675a50ed95a5e2c08"
+  },
+  "baselineUse": "Immutable build 0.3.10 is the local QA reference, not a byte-for-byte snapshot of the complete current editable source version.",
+  "release": {
+    "build": {
+      "id": "hEfIts2TtAI7VnFED",
+      "buildNumber": "0.3.14",
+      "status": "SUCCEEDED",
+      "finishedAt": "2026-10-04T00:15:32.092Z"
+    },
+    "publicLatestVerified": true,
+    "allSourceHashesVerified": true,
+    "protectedMetadataUnchanged": true,
+    "envUnchanged": true,
+    "freshSourceOutputVerified": false,
+    "newActorRuns": 0,
+    "verifiedAtUtc": "2026-10-04T00:17:29.394375+00:00"
+  },
+  "releaseSourceScope": "Reviewed runtime modules and the existing reputation test fixture overlaid the current editable source. Existing editable dependencies and non-runtime files were preserved; no dependency pin changes were made. The immutable QA baseline does not establish complete current editable byte parity."
+}

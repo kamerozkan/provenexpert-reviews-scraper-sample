@@ -8,8 +8,17 @@
   "isPublic": true,
   "url": "https://apify.com/kamerozkan/provenexpert-reviews-scraper",
   "checkedAt": "2026-09-30",
-  "changeScope": "listing metadata and sample documentation only",
-  "runtimeChanged": false,
+  "changeScope": "maintenance documentation and dated validation/publication evidence; listing fields retain the September 30 snapshot",
   "schemasChanged": false,
-  "examplesRegenerated": false
+  "examplesRegenerated": false,
+  "documentationUpdatedAt": "2026-10-04",
+  "maintenance": {
+    "evidenceFile": "maintenance-verification-2026-10-04.json",
+    "cloudPublication": "public latest 0.3.14 / hEfIts2TtAI7VnFED verified; build SUCCEEDED and server source hashes match",
+    "sourceReachability": "no new runtime/source run; remains unverified",
+    "customerEffect": "not measured",
+    "authorTestsPassed": 39,
+    "independentCheckGroupsPassed": 6,
+    "actorRuntimeChanged": true
+  }
 }

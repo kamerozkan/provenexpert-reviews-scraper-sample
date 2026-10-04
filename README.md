@@ -7,7 +7,7 @@ Scrape public business ratings & reviews from ProvenExpert, Trusted Shops, eKomi
 [Run Trusted Shops & ProvenExpert Reviews Scraper - German Ratings on Apify](https://apify.com/kamerozkan/provenexpert-reviews-scraper)
 
 ![Actor](https://img.shields.io/badge/Apify_Actor-public-00a67e)
-![Latest build](https://img.shields.io/badge/latest_build-0.3.8-2563eb)
+![Historical audited build](https://img.shields.io/badge/July_28_audit_build-0.3.8-2563eb)
 ![Sample evidence](https://img.shields.io/badge/sample_run-verified-success)
 ![Schema](https://img.shields.io/badge/JSON_Schema-draft--07-f59e0b)
 
@@ -15,7 +15,15 @@ Normalize public business-profile signals from ProvenExpert, Trusted Shops, eKom
 
 > **Independent and unofficial.** This project is not affiliated with, endorsed by, sponsored by, or an official integration of ProvenExpert, Trusted Shops, eKomi, or Google. Platform names identify public data sources only.
 
-## Verified live snapshot
+## Identity and comparison maintenance on October 4, 2026
+
+The released maintenance separates same-platform branches that share a website. Distinct `businesses[].id` groups remain separate, including through an ungrouped intermediate profile; the same explicit group can still combine its known cross-platform sources.
+
+Automatic `entityKey` values migrate to source-profile anchors. Explicit business-group hashes remain stable. Keep the original business rows, their `platforms` profile IDs/URLs and `scrapedAt` when retaining a comparison dataset. Legacy aggregate keys alone are not reliable branch identities. Ambiguous mappings, contradictory source IDs/URLs and incomplete prior snapshots produce `changeStatus: incomplete` with null deltas instead of claiming a new business, addition or recovery. Known incomplete reference businesses are excluded from ready benchmark cohorts, including their reconstructed profile rows.
+
+39 focused author tests and six final independent check groups passed offline. Separately, public `latest` build `0.3.14` (`hEfIts2TtAI7VnFED`) compiled successfully, and the server source hashes matched the reviewed release package. Current editable dependencies were preserved without pin changes. No new runtime/source run was opened; source reachability and customer effect remain unverified. The dated output files below retain their original build and observation times. See [`maintenance-verification-2026-10-04.json`](maintenance-verification-2026-10-04.json).
+
+## Historical verified snapshot
 
 Audited through the public Store/API and the authenticated owner account on 2026-07-28.
 
@@ -24,7 +32,7 @@ Audited through the public Store/API and the authenticated owner account on 2026
 | Store slug | `kamerozkan/provenexpert-reviews-scraper` |
 | Actor ID | `B2OJoBUTuvZKhistt` |
 | Visibility | Public |
-| Current `latest` build | `0.3.8`, build ID `hQYPTR4urMspFJkUS`, succeeded 2026-07-28 20:29:17 UTC |
+| `latest` build at the July 28 audit | `0.3.8`, build ID `hQYPTR4urMspFJkUS`, succeeded 2026-07-28 20:29:17 UTC |
 | Public Store Examples | Exactly 1 |
 | Public Example | [`provenexpert-four-source-canary`](https://apify.com/kamerozkan/provenexpert-reviews-scraper/examples/provenexpert-four-source-canary), Task ID `l2U6sDRNaNRASgvVZ` |
 | Private saved Tasks | 4; they are not Store Examples |
@@ -33,7 +41,7 @@ Audited through the public Store/API and the authenticated owner account on 2026
 | Verified dataset | `JII2EV4hr0fjTeSgR`: 7 rows, containing 3 `business` and 4 `profile` rows |
 | Run result | 4 requests succeeded, 0 failed, 0 review rows, 0 error rows |
 
-The current build is `0.3.8`, but it had no successful public Example run at audit time. The verified sample outputs below therefore come from build `0.3.5`. Current deployed input, dataset, and output schemas were compared with the audited local source and matched exactly.
+At the July 28 audit, the latest build was `0.3.8`, but it had no successful public Example run at that time. The verified sample outputs below therefore come from build `0.3.5`. At that audit, the deployed input, dataset, and output schemas were compared with the audited local source and matched exactly.
 
 ## Public, private, and replay samples
 
@@ -41,7 +49,7 @@ The current build is `0.3.8`, but it had no successful public Example run at aud
 |---|---|---|
 | [`01_public_store_example_input.json`](01_public_store_example_input.json) | Public | Exact input of the only public Store Example and its successful audited run |
 | [`02_private_saved_task_input.json`](02_private_saved_task_input.json) | Private, never run | Exact input of saved Task `TABYQ8XMTvX2LapLC`; it is not a public Example and had 0 runs |
-| [`03_replay_delta_recipe_input.json`](03_replay_delta_recipe_input.json) | Recipe, not run | Current-schema-valid delta recipe using the audited dataset as `previousDatasetId`; replace it with a retained dataset you control |
+| [`03_replay_delta_recipe_input.json`](03_replay_delta_recipe_input.json) | Recipe, not run | Schema-valid at the July 28 audit; delta recipe using the audited dataset as `previousDatasetId`; replace it with a retained dataset you control |
 
 ## Decision-grade interpretation
 
