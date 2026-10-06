@@ -1,0 +1,175 @@
+{
+  "checkedAtUtc": "2026-10-06T17:44:37.629665+00:00",
+  "actorId": "B2OJoBUTuvZKhistt",
+  "actorUrl": "https://apify.com/kamerozkan/provenexpert-reviews-scraper",
+  "source": "authenticated GET of saved active pricing and latest frozen build; no execution",
+  "checkedLatestBuild": {
+    "buildId": "hEfIts2TtAI7VnFED",
+    "finishedAt": "2026-10-04T00:15:32.092Z",
+    "buildNumberInt": 300014,
+    "buildNumber": "0.3.14"
+  },
+  "activePricing": {
+    "pricingModel": "PAY_PER_EVENT",
+    "isPriceChangeNotificationSuppressed": false,
+    "minimalMaxTotalChargeUsd": null,
+    "startedAt": "2026-09-16T00:00:00.000Z",
+    "pricingPerEvent": {
+      "actorChargeEvents": {
+        "apify-actor-start": {
+          "eventTitle": "Actor Start",
+          "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+          "eventPriceUsd": 0.005,
+          "isPrimaryEvent": false,
+          "isOneTimeEvent": true
+        },
+        "business-result": {
+          "eventTitle": "Matched business",
+          "eventDescription": "One normalized cross-platform business row with Trust Score and benchmark fields.",
+          "eventTieredPricingUsd": {
+            "FREE": {
+              "tieredEventPriceUsd": 0.02
+            },
+            "BRONZE": {
+              "tieredEventPriceUsd": 0.018
+            },
+            "SILVER": {
+              "tieredEventPriceUsd": 0.016
+            },
+            "GOLD": {
+              "tieredEventPriceUsd": 0.014
+            },
+            "PLATINUM": {
+              "tieredEventPriceUsd": 0.013
+            },
+            "DIAMOND": {
+              "tieredEventPriceUsd": 0.012
+            }
+          },
+          "isPrimaryEvent": true,
+          "isOneTimeEvent": false
+        },
+        "change-result": {
+          "eventTitle": "Reputation change",
+          "eventDescription": "One new or changed business comparison row. Unchanged rows are not charged in changes-only mode.",
+          "eventTieredPricingUsd": {
+            "FREE": {
+              "tieredEventPriceUsd": 0.02
+            },
+            "BRONZE": {
+              "tieredEventPriceUsd": 0.018
+            },
+            "SILVER": {
+              "tieredEventPriceUsd": 0.016
+            },
+            "GOLD": {
+              "tieredEventPriceUsd": 0.014
+            },
+            "PLATINUM": {
+              "tieredEventPriceUsd": 0.014
+            },
+            "DIAMOND": {
+              "tieredEventPriceUsd": 0.014
+            }
+          },
+          "isPrimaryEvent": false,
+          "isOneTimeEvent": false
+        },
+        "profile-result": {
+          "eventTitle": "Platform profile",
+          "eventDescription": "One normalized ProvenExpert, Trusted Shops, eKomi, or Google Maps profile row.",
+          "eventTieredPricingUsd": {
+            "FREE": {
+              "tieredEventPriceUsd": 0.0075
+            },
+            "BRONZE": {
+              "tieredEventPriceUsd": 0.00675
+            },
+            "SILVER": {
+              "tieredEventPriceUsd": 0.006
+            },
+            "GOLD": {
+              "tieredEventPriceUsd": 0.00525
+            },
+            "PLATINUM": {
+              "tieredEventPriceUsd": 0.004875
+            },
+            "DIAMOND": {
+              "tieredEventPriceUsd": 0.0045
+            }
+          },
+          "isPrimaryEvent": false,
+          "isOneTimeEvent": false
+        },
+        "review-result": {
+          "eventTitle": "Review",
+          "eventDescription": "One native ProvenExpert, Trusted Shops, or eKomi review row.",
+          "eventTieredPricingUsd": {
+            "FREE": {
+              "tieredEventPriceUsd": 0.001
+            },
+            "BRONZE": {
+              "tieredEventPriceUsd": 0.0009
+            },
+            "SILVER": {
+              "tieredEventPriceUsd": 0.0008
+            },
+            "GOLD": {
+              "tieredEventPriceUsd": 0.0007
+            },
+            "PLATINUM": {
+              "tieredEventPriceUsd": 0.00065
+            },
+            "DIAMOND": {
+              "tieredEventPriceUsd": 0.0006
+            }
+          },
+          "isPrimaryEvent": false,
+          "isOneTimeEvent": false
+        }
+      }
+    },
+    "createdAt": "2026-09-01T19:22:49.595Z",
+    "apifyMarginPercentage": 0.2,
+    "notifiedAboutFutureChangeAt": "2026-09-01T19:23:09.820Z",
+    "notifiedAboutChangeAt": "2026-09-16T00:05:56.310Z"
+  },
+  "pricingConfigurationChanged": false,
+  "newActorRuns": 0,
+  "newSourceObservations": false,
+  "newCustomerPaymentOrSatisfactionProven": false,
+  "historicalSampleFilesChanged": false,
+  "proposedReadmeSha256": "40897144d1700e03458815f5bfd2d7f6b142cae115945ae692e035b58d45b9b9",
+  "savedActivePricingHash": "cbcd74227e4395d5c61278e239b93c9e75a2a09cf9c03ac17a4edce17a9a76a2",
+  "limits": [
+    "This record verifies billing configuration and source placement; it does not independently authenticate a customer output or prove source availability",
+    "Any subsequent publication build and public propagation must be verified separately"
+  ],
+  "notes": "Free-tier rates: `business-result` $0.02; `change-result` $0.02; `profile-result` $0.0075; `review-result` $0.001. Startup is $0.005 per GB of memory with a minimum of one event. Error rows have no custom result-event charge; startup can still apply.",
+  "publishedLatestBuild": {
+    "id": "uSpT7yhBBDQeErJkT",
+    "buildNumber": "0.3.16",
+    "status": "SUCCEEDED",
+    "startedAt": "2026-10-06T18:06:48.929Z",
+    "finishedAt": "2026-10-06T18:07:57.897Z"
+  },
+  "cloudPublicationCompletedAtUtc": "2026-10-06T18:10:26.735380+00:00",
+  "publicLatestVerified": true,
+  "allFrozenSourceHashesVerified": true,
+  "sourceFileCountVerified": 33,
+  "sourceChangedFiles": [
+    ".actor/input_schema.json"
+  ],
+  "publishedReadmeSha256": "76e5b2b2bafca9ca982db0b0006fcce37e3d7548b6e94a6429148aef602f0c0d",
+  "protectedMetadataUnchanged": true,
+  "envUnchanged": true,
+  "cloudReleaseEvidenceSha256": "51aa351802d96101a654807b80a0a747fa786b44d0241c3336451f58b3879c63",
+  "cloudSourceManifestSha256": "8f051d171d2905830e1d91031a15fb656d11a92a4b6ba1b0b8b5d15701055576",
+  "cloudReadmeRepaired": true,
+  "storePublicationBlocked": false,
+  "publicationScope": "Verified cloud release and linked GitHub sample",
+  "inputSchemaSha256": "011de6f38a523c26d00860a0075e1819d730e2cfd9e5965e5ebf966c4fcff80f",
+  "inputSchemaDescriptionPropertiesChanged": [
+    "startUrls"
+  ]
+}

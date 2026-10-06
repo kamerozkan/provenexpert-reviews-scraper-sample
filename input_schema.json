@@ -1,0 +1,286 @@
+{
+  "title": "ProvenExpert Reviews & DACH Reputation Monitor",
+  "description": "Extract ProvenExpert, Trusted Shops, eKomi, and Google Maps reputation data; match profiles; calculate trust scores, deltas, and sector benchmarks.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrls": {
+      "title": "Review profile URLs",
+      "type": "array",
+      "description": "ProvenExpert, Trusted Shops, eKomi, or Google Maps business profile URLs. At the Free tier checked on 6 October 2026, delivered business rows cost $0.02, profile rows $0.0075, change rows $0.02 and review rows $0.001. Invalid or blocked profiles produce error rows with no custom result-event charge; the memory-based Actor start can still apply. Live Pricing is authoritative.",
+      "editor": "requestListSources",
+      "maxItems": 100,
+      "prefill": [
+        {
+          "url": "https://www.provenexpert.com/de-de/sp-unternehmerforum-gmbh/"
+        }
+      ]
+    },
+    "profileSlugs": {
+      "title": "ProvenExpert profile slugs",
+      "type": "array",
+      "description": "ProvenExpert slugs such as provenexpert-com.",
+      "editor": "stringList",
+      "maxItems": 100,
+      "default": []
+    },
+    "businesses": {
+      "title": "Cross-platform businesses",
+      "type": "array",
+      "description": "Optional explicit company groups. URLs in the same object are guaranteed to be matched into one business row.",
+      "editor": "json",
+      "default": [],
+      "maxItems": 25,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Stable business ID",
+            "description": "Your optional stable identifier for this business."
+          },
+          "companyName": {
+            "type": "string",
+            "title": "Company name",
+            "description": "Preferred company name used in the matched business row."
+          },
+          "category": {
+            "type": "string",
+            "title": "Benchmark category",
+            "description": "Sector label used to select comparable businesses."
+          },
+          "city": {
+            "type": "string",
+            "title": "City",
+            "description": "Optional city label for this business."
+          },
+          "provenExpertUrl": {
+            "type": "string",
+            "title": "ProvenExpert URL",
+            "description": "Public ProvenExpert business profile URL."
+          },
+          "trustedShopsUrl": {
+            "type": "string",
+            "title": "Trusted Shops URL",
+            "description": "Public Trusted Shops business profile URL."
+          },
+          "eKomiUrl": {
+            "type": "string",
+            "title": "eKomi URL",
+            "description": "Public eKomi certificate/profile URL."
+          },
+          "googleMapsUrl": {
+            "type": "string",
+            "title": "Google Maps URL",
+            "description": "Public Google Maps place URL."
+          }
+        }
+      }
+    },
+    "searchQueries": {
+      "title": "ProvenExpert company discovery",
+      "type": "array",
+      "description": "Discover public ProvenExpert profiles by sector/keyword and optional location. Results become the benchmark cohort.",
+      "editor": "json",
+      "default": [],
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "term"
+        ],
+        "properties": {
+          "term": {
+            "type": "string",
+            "title": "Sector or keyword",
+            "description": "The service, sector, or keyword to search on ProvenExpert."
+          },
+          "location": {
+            "type": "string",
+            "title": "Location",
+            "description": "Optional city or region for the ProvenExpert search."
+          },
+          "maxProfiles": {
+            "type": "integer",
+            "title": "Maximum profiles",
+            "description": "Maximum discovered profiles to process for this query.",
+            "default": 50,
+            "minimum": 1,
+            "maximum": 100
+          }
+        }
+      }
+    },
+    "locale": {
+      "title": "ProvenExpert locale",
+      "type": "string",
+      "description": "Locale used for slugs and non-localized ProvenExpert URLs.",
+      "editor": "select",
+      "default": "de-de",
+      "enum": [
+        "de-de",
+        "en-us",
+        "en-gb"
+      ],
+      "enumTitles": [
+        "German (de-de)",
+        "English US (en-us)",
+        "English UK (en-gb)"
+      ]
+    },
+    "outputMode": {
+      "title": "Raw output mode",
+      "type": "string",
+      "description": "Business and change rows are controlled separately below. This option controls raw profile/review rows.",
+      "editor": "select",
+      "default": "profile_and_reviews",
+      "enum": [
+        "profile_and_reviews",
+        "profiles_only",
+        "reviews_only"
+      ],
+      "enumTitles": [
+        "Profiles and reviews",
+        "Profiles only",
+        "Reviews only"
+      ]
+    },
+    "maxReviewsPerProfile": {
+      "title": "Maximum reviews per profile",
+      "type": "integer",
+      "description": "Maximum native reviews saved per ProvenExpert, Trusted Shops, or eKomi profile. Google Maps currently returns aggregate reputation fields.",
+      "editor": "number",
+      "default": 20,
+      "minimum": 0,
+      "maximum": 500
+    },
+    "sortBy": {
+      "title": "Review sorting",
+      "type": "string",
+      "description": "Order used when the source supports sorting.",
+      "editor": "select",
+      "default": "newest",
+      "enum": [
+        "newest",
+        "oldest",
+        "best",
+        "worst",
+        "experiences_first"
+      ],
+      "enumTitles": [
+        "Newest first",
+        "Oldest first",
+        "Best first",
+        "Most critical first",
+        "Reviews with experiences first"
+      ]
+    },
+    "followExternalProfiles": {
+      "title": "Follow linked external profiles",
+      "type": "boolean",
+      "description": "Open supported Trusted Shops, eKomi, and Google Maps links found on ProvenExpert and refresh their aggregate data directly.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "discoverExternalProfilesFromWebsite": {
+      "title": "Discover review badges on company websites",
+      "type": "boolean",
+      "description": "Visit only the company homepage and follow supported ProvenExpert, Trusted Shops, eKomi, or Google Maps profile links found in anchors and badge iframes.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "includeBusinessSummary": {
+      "title": "Create cross-platform business rows",
+      "type": "boolean",
+      "description": "Match profiles and emit one business row with all channels and the DACH Trust Score.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "emitChanges": {
+      "title": "Create change rows",
+      "type": "boolean",
+      "description": "Compare each business with its latest stored or supplied snapshot. A first observation only creates the baseline; when a grouped source fails, the change row reports it as unknown and suppresses deltas instead of guessing.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "changesOnly": {
+      "title": "Output changes only",
+      "type": "boolean",
+      "description": "Suppress unchanged business/profile rows and reviews already present in the previous snapshot.",
+      "editor": "checkbox",
+      "default": false
+    },
+    "saveHistory": {
+      "title": "Save time-series snapshots",
+      "type": "boolean",
+      "description": "Append compact time-series snapshots and maintain an indexed latest-state store for fast future comparisons.",
+      "editor": "checkbox",
+      "default": true
+    },
+    "historyDatasetName": {
+      "title": "History dataset name",
+      "type": "string",
+      "description": "Persistent named dataset used for automatic time-series comparisons.",
+      "editor": "textfield",
+      "default": "dach-reputation-history",
+      "minLength": 1,
+      "maxLength": 63
+    },
+    "previousDatasetId": {
+      "title": "Previous snapshot dataset ID or name",
+      "type": "string",
+      "description": "Optional explicit baseline. When empty, the named history dataset is used.",
+      "editor": "resourcePicker",
+      "resourceType": "dataset",
+      "resourcePermissions": [
+        "READ"
+      ]
+    },
+    "benchmarkDatasetId": {
+      "title": "Benchmark dataset ID or name",
+      "type": "string",
+      "description": "Optional dataset containing business, business_snapshot, or profile rows to enlarge the benchmark cohort.",
+      "editor": "resourcePicker",
+      "resourceType": "dataset",
+      "resourcePermissions": [
+        "READ"
+      ]
+    },
+    "minimumBenchmarkCohortSize": {
+      "title": "Minimum benchmark cohort",
+      "type": "integer",
+      "description": "Minimum comparable businesses required before a benchmark is marked ready.",
+      "editor": "number",
+      "default": 3,
+      "minimum": 2,
+      "maximum": 1000
+    },
+    "ratingChangeThreshold": {
+      "title": "Rating change threshold",
+      "type": "number",
+      "description": "Minimum absolute rating movement counted as a change. Review count changes always count.",
+      "editor": "number",
+      "default": 0.01,
+      "minimum": 0,
+      "maximum": 1
+    },
+    "maxConcurrency": {
+      "title": "Maximum concurrency",
+      "type": "integer",
+      "description": "Profiles processed in parallel. Keep this moderate for stable crawling.",
+      "editor": "number",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 6
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "description": "Optional Apify Proxy configuration. Direct connections are used by default; enable proxy rotation if Google or another source blocks your cloud region.",
+      "editor": "proxy",
+      "default": {
+        "useApifyProxy": false
+      }
+    }
+  }
+}

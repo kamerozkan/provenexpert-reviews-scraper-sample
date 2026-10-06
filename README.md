@@ -15,6 +15,20 @@ Normalize public business-profile signals from ProvenExpert, Trusted Shops, eKom
 
 > **Independent and unofficial.** This project is not affiliated with, endorsed by, sponsored by, or an official integration of ProvenExpert, Trusted Shops, eKomi, or Google. Platform names identify public data sources only.
 
+
+## Current billing checked on October 6, 2026
+
+Checked against the saved active Actor pricing on October 6, 2026. These are Free-tier event rates; use the [Pricing tab](https://apify.com/kamerozkan/provenexpert-reviews-scraper/pricing) for your plan and memory allocation. Historical samples below keep their original dates and do not prove current source availability.
+
+Free-tier rates: `business-result` $0.02; `change-result` $0.02; `profile-result` $0.0075; `review-result` $0.001. Startup is $0.005 per GB of memory with a minimum of one event. Error rows have no custom result-event charge; startup can still apply.
+
+See [`pricing-verification-2026-10-06.json`](pricing-verification-2026-10-06.json) for the saved event configuration and scope.
+
+## October 6, 2026 publication
+
+The owner release check confirmed public `latest` build `0.3.16` (`uSpT7yhBBDQeErJkT`), its complete frozen source hashes and unchanged protected Actor settings. This publication did not run a new scrape. Older snapshots and sample outputs below retain their original dates; they are not evidence of current source availability, customer payment or satisfaction.
+
+
 ## Identity and comparison maintenance on October 4, 2026
 
 The released maintenance separates same-platform branches that share a website. Distinct `businesses[].id` groups remain separate, including through an ungrouped intermediate profile; the same explicit group can still combine its known cross-platform sources.
@@ -290,3 +304,5 @@ Use [`dataset_record.schema.json`](dataset_record.schema.json) to validate consu
 ## License
 
 Sample code and repository documentation are available under the [MIT License](LICENSE). Source data remains subject to its original rights, terms, and applicable law.
+
+The current [`input_schema.json`](input_schema.json) includes the corrected billing field descriptions; input types, defaults and validation constraints were preserved.
